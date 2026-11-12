@@ -1,0 +1,761 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hero+Light&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/geist@latest/dist/geist.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+/* Make sure you have the 'Lobster' font imported if you intend to use it as in previous versions */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* Make sure you have 'Cormorant Garamond' and 'Open Sans' if they are used elsewhere */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to top left, #ffe4e1, #fff0f5);
+  color: #444;
+  scroll-behavior: smooth;
+
+  /* Font smoothing enhancements */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  color: #c2185b; /* Unify to match h2 for consistency */
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+}
+
+/* NAVBAR - DESKTOP STYLES */
+.navbar {
+  background-color: #F8E8EE; /* Using the softer blush pink as discussed */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #C2185B; /* Deeper rose for contrast */
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Lighter shadow */
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.initials {
+  font-size: 2.5rem; /* Consistent with nav-logo on desktop */
+}
+
+.love-symbol {
+  font-size: 2rem; /* Consistent with nav-logo on desktop */
+  margin: 0 5px;
+  color: #C2185B;
+}
+
+.navbar ul {
+  flex-grow: 2; /* Allows nav links to take available space */
+  display: flex;
+  justify-content: center; /* Centers nav links on desktop */
+  list-style: none;
+  gap: 2rem; /* Spacing between nav items on desktop */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #8b2c4a;
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #e91e63;
+  text-decoration: none;
+  border-bottom: 2px solid #e91e63;
+  padding-bottom: 2px;
+}
+
+/* NIGHT MODE TOGGLE BUTTON - DESKTOP */
+#night-mode-toggle {
+  font-size: 2.5rem; /* Make the icons noticeably bigger */
+  transition: color 0.5s ease;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  z-index: 1000; /* Ensure it's above other content */
+}
+/* Icon color when the page is in normal (day) mode) */
+.normal-mode #night-mode-toggle {
+  color: #5a5a5a; /* Very bright grey for the moon */
+}
+/* Icon color when the page is in night mode */
+.night-mode #night-mode-toggle {
+  color: #FFD700; /* Changed to Gold for a sun-like appearance */
+}
+
+
+/* NAVBAR - MOBILE STYLES (for screens up to 768px wide) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 1rem;
+  }
+  .nav-logo {
+    font-size: 2rem; /* Slightly smaller logo for mobile */
+    margin-bottom: 0.5rem; /* Space below the logo */
+  }
+  .initials {
+    font-size: 2rem; /* Consistent with nav-logo on mobile */
+  }
+  .love-symbol {
+    font-size: 1.5rem; /* Consistent with nav-logo on mobile */
+  }
+
+  .navbar ul {
+    flex-direction: row; /* Keep nav links horizontal */
+    justify-content: space-around; /* Distribute links evenly */
+    width: 100%; /* Make links take full width */
+    margin-bottom: 0.5rem; /* Space below the nav links */
+    gap: 0; /* Remove gap if using space-around */
+    padding: 0 1rem; /* Add horizontal padding to the ul itself */
+  }
+
+  .navbar li {
+    flex-basis: 25%; /* Each nav item takes 25% width (4 items) */
+    text-align: center; /* Center the text within each li */
+  }
+
+  .navbar a { /* Apply specific styles to nav links for mobile */
+    font-size: 1rem; /* Makes nav links smaller on mobile for better fit */
+    padding: 0.2rem 0.5rem; /* Adjust padding for mobile hit area */
+  }
+
+  #night-mode-toggle {
+    position: absolute; /* Position it absolutely */
+    top: 1rem; /* Align to the top */
+    right: 1rem; /* Align to the right */
+    font-size: 1.5rem; /* Mobile size for toggle icon */
+    padding: 0;
+    z-index: 1001; /* Ensure it's above other content in mobile */
+  }
+}
+
+/* GENERAL MOBILE FONT SIZE ADJUSTMENTS (for screens up to 600px wide) */
+@media (max-width: 600px) {
+  /* Note: These rules will override the 768px rules if the screen is smaller than 600px */
+  .nav-logo {
+    font-size: 1.8rem; /* Slightly smaller for very small screens */
+  }
+  .initials {
+    font-size: 1.8rem;
+  }
+  .love-symbol {
+    font-size: 1.3rem;
+  }
+
+  .highlight {
+    font-size: 2.8rem;
+  }
+
+  .bride, .groom {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: url('wedding-bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: #333333;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 240, 245, 0.15); /* Lighter pink overlay */
+  z-index: 0;
+}
+
+.hero-content {
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 2;
+  line-height: 1.5;
+}
+
+.hero-content p {
+  font-size: 1.5rem; /* You can adjust this value as needed */
+}
+
+.highlight {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: #e91e63;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Slightly lighter shadow */
+  margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.names {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  color: #c2185b;
+  font-weight: bold;
+  margin: 10px 0;
+  display: block;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow */
+  z-index: 3;
+}
+
+.bride {
+  color: #c2185b; /* slightly deeper pink */
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.groom {
+  color: #2196f3;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.music-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.music-button button {
+  background: linear-gradient(135deg, #ff4081, #ff80ab);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s;
+}
+
+.music-button button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.music-button button.playing {
+  background: #ff4081; /* Brighter pink */
+  color: white;
+  box-shadow: 0 0 12px #ff80ab;
+  transform: scale(1.1);
+  opacity: 1; /* Remove dimming */
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: transparent;
+  transition: background-color 0.5s ease; /* Smooth transition for background */
+}
+
+/* This rule doesn't do much on its own, section's transparent background is usually enough */
+.night-mode .couple {
+  background-color: #1f2a3a;;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.0rem;
+  color: #c2185b;
+  margin-bottom: 1rem;
+}
+
+.couple-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.couple-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px #e91e63;
+}
+
+.couple-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #c2185b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.event {
+  background: linear-gradient(to bottom right, #fff6e5, #ffe3ec);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Lighter, subtle shadow */
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #ffe3ed; /* Very light, soft pink border */
+  color: #333;
+  transition: transform 0.3s ease;
+  word-break: break-word;
+}
+
+.event p {
+  word-break: break-word;
+}
+
+.event:hover {
+  transform: translateY(-5px);
+}
+
+.venue-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.venue-cards .card h3 {
+  margin-bottom: 1rem;
+}
+
+.venue {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.card {
+  background-color: #ffffff; /* Clean white background */
+  border: 1px solid #ffe3ed; /* Very light, soft pink border */
+  padding: 1.5rem;
+  width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Lighter, subtle shadow */
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card a:hover {
+  color: #c2185b; /* Deeper pink on hover */
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #e91e63; /* A vibrant pink for links, stands out on white */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.guests {
+  background: transparent;
+  border-top: 1px solid #e91e63;
+  border-bottom: 1px solid #e91e63;
+  padding: 60px 20px;
+  text-align: center;
+  transition: background-color 0.5s ease; /* Smooth transition for background */
+}
+
+.guests h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+
+.guest-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.guest-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.guest-card {
+  background-color: #ffffff; /* Clean white background */
+  color: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter, subtle shadow */
+  text-align: left;
+}
+
+.guest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.guest-card h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #c2185b; /* A consistent main pink for these titles */
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.guest-card ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+/* FOOTER SECTION - STYLES */
+footer {
+  background-color: #F8E8EE; /* Light blush pink for normal mode */
+  color: #555; /* Default dark grey for normal mode text */
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.1rem; /* General font size for footer text */
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+}
+
+footer p {
+  margin-bottom: 0.5rem; /* Space between lines */
+  line-height: 1.4; /* Ensure good line spacing */
+}
+
+footer p:last-child {
+  margin-bottom: 0; /* No extra margin after the last paragraph */
+}
+
+/* Specific style for "Manoj Loves Supriya" in footer */
+.footer-main-text {
+  font-size: 1.8rem; /* Larger font for the main names */
+  font-family: 'Great Vibes', cursive; /* Use Great Vibes for a romantic touch */
+  color: #C2185B; /* The prominent deep rose pink */
+  margin-bottom: 0.8rem; /* Slightly more space after the names */
+}
+
+/* Specific style for "#MSFOREVER" in footer */
+.hashtag {
+  font-size: 1.4rem; /* Slightly larger than general text */
+  font-weight: 700; /* Make it bold */
+  color: #e91e63; /* Vibrant pink for the hashtag */
+  letter-spacing: 1px; /* Add a little spacing for emphasis */
+  text-transform: uppercase; /* Optional: Make it uppercase for more impact */
+}
+
+.countdown-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.count-title {
+  font-size: 1.8rem;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1rem;
+  color: #c0392b;
+}
+
+.countdown-wrapper h3.count-title {
+  font-style: bold;
+}
+
+.countdown-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.count-box {
+  background-color: #ffffff; /* Clean white background */
+  border: 2px solid #ffe3ed; /* Very light, soft pink border */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Lighter, subtle shadow */
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  min-width: 80px;
+}
+
+.count-box span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e91e63; /* Brighter pink for numbers */
+  display: block;
+}
+
+.count-box label {
+  font-size: 0.9rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0.3rem;
+  display: block;
+  color: #777; /* Darker grey for readability */
+}
+
+/* Scrollable photo strip */
+.photo {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.photo img {
+  height: 320px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* Romantic message */
+.love-message {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  color: #c2185b; /* Keep this prominent pink */
+  margin: 20px;
+  line-height: 1.5;
+  background-color: #ffffff; /* Solid white background */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter, subtle shadow */
+}
+
+button:focus {
+  outline: 2px dashed #e91e63;
+  outline-offset: 4px;
+}
+
+
+/* --- Night Mode Core Styles --- */
+/* These styles apply to the <body> when the 'night-mode' class is active */
+.night-mode {
+  background: linear-gradient(to top left, #1a2a3a, #2c3e50); /* Darker, subtle gradient */
+  color: #ffffff; /* Main light text color for night mode */
+  background-image: none; /* Remove the linear gradient in night mode */
+}
+
+/* --- Night Mode Styles for Specific Elements --- */
+
+/* Add a solid background to all sections in night mode */
+.night-mode section {
+  background-color: rgba(31, 42, 58, 0.9); /* A solid dark color for sections, now 90% opaque */
+}
+
+/* Navbar in Night Mode */
+.night-mode .navbar {
+  background-color: rgba(26, 43, 60, 0.95); /* Slightly darker shade for the navbar, now 95% opaque */
+}
+.night-mode .nav-logo,
+.night-mode .love-symbol {
+  color: #add8e6; /* Light blue/teal for logo/symbol */
+}
+.night-mode .navbar a {
+  color: #add8e6; /* Light blue for navigation links */
+}
+.night-mode .navbar a:hover {
+  color: #ffffff; /* White on hover */
+}
+
+/* Hero Section in Night Mode */
+.night-mode .hero::after {
+  background-color: rgba(0, 0, 0, 0.6); /* Darker, more opaque overlay for the hero background image, now 60% opaque */
+}
+.night-mode .hero-content .highlight,
+.night-mode .hero-content h2,
+.night-mode .hero-content .names,
+.night-mode .hero-content p,
+.night-mode .countdown-wrapper h3.count-title {
+  color: #add8e6; /* Light blue/teal for hero text and countdown title */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8); /* Darker shadow for visibility */
+}
+
+/* General Section Headings in Night Mode */
+.night-mode section h2 {
+  color: #add8e6; /* Light blue/teal for all section titles */
+}
+
+/* Couple-name also has proper night mode color */
+.night-mode .couple-name {
+  color: #add8e6;
+}
+
+/* Event Cards in Night Mode */
+.night-mode .event {
+  background: rgba(42, 58, 75, 0.9); /* Darker background for event cards, now 90% opaque */
+  border-color: #3b506b; /* Darker border */
+  color: #ffffff; /* White text */
+}
+.night-mode .event h4 {
+  color: #add8e6; /* Light blue/teal for event titles */
+}
+.night-mode .event p { /* Ensure text in event cards is white */
+  color: #ffffff;
+}
+.night-mode .event p span { /* Ensure icons/dates in event cards are white */
+  color: #add8e6; /* Light blue for icons */
+}
+
+
+/* Venue Cards in Night Mode */
+.night-mode .card {
+  background: rgba(42, 58, 75, 0.9); /* Darker background for venue cards, now 90% opaque */
+  border-color: #3b506b;
+  color: #ffffff; /* White text for general content */
+}
+.night-mode .card h3 {
+  color: #add8e6;
+}
+.night-mode .card p { /* Ensure text in venue cards is white */
+  color: #ffffff;
+}
+.night-mode .card p span { /* Ensure icons/dates in venue cards are white */
+  color: #add8e6; /* Light blue for icons */
+}
+.night-mode .card a {
+  color: #add8e6; /* Light blue/teal for location links */
+}
+.night-mode .card a:hover {
+  color: #ffffff; /* White on hover for links */
+}
+
+/* Guest Cards in Night Mode */
+.night-mode .guests {
+  background-color: rgba(31, 42, 58, 0.9); /* A dark shade matching your gradient start, now 90% opaque */
+  border-color: #3b506b; /* Darker border */
+}
+
+.night-mode .guest-card {
+  background: rgba(42, 58, 75, 0.9); /* Darker background for guest cards, now 90% opaque */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  color: #ffffff; /* White text for general content */
+}
+.night-mode .guest-card h3 {
+  color: #add8e6; /* Light blue/teal for guest card titles */
+}
+.night-mode .guest-card ul {
+  color: #ffffff; /* White text for list items */
+}
+.night-mode .guest-card ul li { /* Ensure individual list items are white */
+  color: #ffffff;
+}
+.night-mode .guest-card .icon { /* Ensure icons in guest cards are colored */
+  color: #add8e6; /* Light blue for icons */
+}
+
+.night-mode .guest-subtitle {
+  color: #ffffff; 
+}
+
+
+/* Countdown Boxes in Night Mode */
+.night-mode .countdown-boxes .count-box {
+  background: rgba(42, 58, 75, 0.9); /* Darker background for countdown boxes, now 90% opaque */
+  border-color: #3b506b;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.night-mode .count-box span {
+  color: #add8e6; /* Light blue/teal for numbers */
+}
+.night-mode .count-box label {
+  color: #cccccc; /* Lighter grey for labels */
+}
+
+/* Love Message in Night Mode */
+.night-mode .love-message {
+  background: linear-gradient(45deg, rgba(31, 42, 58, 0.9), rgba(42, 58, 75, 0.9)); /* Darker gradient, now 90% opaque */
+  color: #add8e6; /* Light blue/teal */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer in Night Mode */
+.night-mode footer {
+  background-color: rgba(26, 43, 60, 0.95); /* Match navbar background in night mode, now 95% opaque */
+  color: #ffffff; /* General white text for night mode footer */
+}
+
+.night-mode .footer-main-text {
+  color: #add8e6; /* Light blue/teal for names in night mode */
+}
+
+.night-mode .hashtag {
+  color: #ffffff; /* White for hashtag in night mode for good contrast */
+}
+
+/* Music Button in Night Mode */
+.night-mode .music-button button {
+  background: linear-gradient(135deg, #4b6a82, #6b8fa1); /* Darker gradient for button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.night-mode .music-button button.playing {
+  background: #4b6a82;
+  box-shadow: 0 0 12px #6b8fa1;
+}

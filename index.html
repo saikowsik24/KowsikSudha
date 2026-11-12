@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Groom Wedding Invite</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <span class="initials">K</span>
+        <span class="love-symbol">❤️</span>
+        <span class="initials">S</span>
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#couple">Couple</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#venue">Venues</a></li>
+      </ul>
+      <button id="night-mode-toggle"><i class="fa-solid fa-sun"></i></button>
+    </nav>
+
+    <div class="music-button">
+      <audio id="bgMusic" autoplay loop muted>
+        <source src="music.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <button title="Click to unmute music">🔇</button>
+    </div>
+
+
+    <header class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="highlight">You're Invited!</h1>
+        <h2>To the Wedding of</h2>
+        <h1 class="names">Kowsik & Sudha</h1>
+        <p>📍Aryavysya Wedding Hall , Porumamilla </p>
+        <p>📅 December 20th, 2026</p>
+        <div class="countdown-wrapper">
+        <h3 class="count-title">In love's infinite journey, our chapter starts in...</h3>
+        <div class="countdown-boxes">
+          <div class="count-box"><span id="days">00</span><label>Days</label></div>
+          <div class="count-box"><span id="hours">00</span><label>Hours</label></div>
+          <div class="count-box"><span id="minutes">00</span><label>Minutes</label></div>
+          <div class="count-box"><span id="seconds">00</span><label>Seconds</label></div>
+        </div>
+      </div>
+      </div>
+    </header>
+
+    <section class="couple" id="couple">
+      <h2>👫❤️ Meet the Couple</h2>
+
+      <div class="photo">
+        <img src="Couple_Photo.jpeg" alt="Groom and Bride" />
+      </div>
+      <div class="couple-name">
+        <h3>Kowsik❤️Sudha</h3>
+      </div>
+      <p class="love-message">💞 Hand in hand, with hearts entwined — we’re writing the first chapter of forever. Celebrate it with us. 💞</p>
+    </section>
+
+
+    <section class="events" id="events">
+      <h2>🎉 Events</h2>
+      <div class="event-list">
+        <div class="event">
+          <h4>🌸 Haldi Ceremony</h4>
+          <p><span>🗓️</span> Dec 18, 2026 &nbsp; <span>⏰</span> 10:00 AM<br>
+            📍 Vempalli</p>
+        </div>
+        <div class="event">
+          <h4>🍽 Reception & Dinner</h4>
+          <p><span>🗓️</span> Dec 19, 2026 &nbsp; <span>⏰</span> 7:00 PM<br>
+            📍 Aryavysya Wedding Hall , Porumamilla</p>
+        </div>
+        <div class="event">
+          <h4>💍 Wedding Ceremony</h4>
+          <p><span>🗓️</span> Dec 20, 2026 &nbsp; <span>⏰</span> 3:19 AM<br>
+            📍 Aryavysya Wedding Hall , Porumamilla</p>
+        </div>
+        <div class="event">
+          <h4>🙏🕉️ Satyanarayana Swamy Vratam</h4>
+          <p><span>🗓️</span> Dec 24, 2026 &nbsp; <span>⏰</span> 9:00 AM<br>
+            📍 Vempalli</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="venue" id="venue">
+      <h2>📍 Venues</h2>
+      <div class="venue-cards">
+        <div class="card">
+          <h3>Haldi Ceremony</h3>
+          <p><span>📍</span> Vempalli</p>
+          <p><span>🗓️</span> December 18, 2026</p>
+          <p><span>⏰</span> 09:00 AM</p>
+          <a href="https://www.google.com/maps/place/Medasaniramakotaya+nilayam/@16.4736045,80.6958812,17z/data=!3m1!4b1!4m6!3m5!1s0x3a35fb003629d11d:0xe65bd8c1f3cc0429!8m2!3d16.4735994!4d80.6984561!16s%2Fg%2F11ld53s7ng?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">📍 View Location</a>
+        </div>
+        <div class="card">
+          <h3>Wedding Ceremony</h3>
+          <p><span>📍</span> Aryavysya Wedding Hall , Porumamilla</p>
+          <p><span>🗓️</span> December 20, 2026</p>
+          <p><span>⏰</span> 05:20 AM</p>
+          <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Manoj–Supriya's+Wedding+Ceremony&dates=20250817T214900Z/20250818T001900Z&details=Join+us+to+celebrate+the+wedding+of+Manoj+and+Supriya+at+Rajadhani+Gardens,+Hyderabad.&location=Rajadhani+Gardens,+Hyderabad&sf=true&output=xml" target="_blank">💌 Save to Calendar</a>
+          <a href="https://www.google.com/maps/place/Rajdhani+Garden/@17.3728097,78.5386741,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb98c852f4b543:0x70d91fc944fb9128!8m2!3d17.3728046!4d78.541249!16s%2Fg%2F1tcw__18?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">📍 View Location</a>
+        </div>
+        <div class="card">
+          <h3>Satyanarayana Swamy Vratam</h3>
+          <p><span>📍</span>Vempalli</p>
+          <p><span>🗓️</span> December 24, 2026</p>
+          <p><span>⏰</span> 09:00 AM</p>
+          <a href="https://www.google.com/maps/place/SS+SQUARE/@16.4705573,80.7216537,17z/data=!3m1!4b1!4m6!3m5!1s0x3a35fd006c94e969:0x8d7903c821969661!8m2!3d16.4705573!4d80.7216537!16s%2Fg%2F11xdtjyxmt?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">📍 View Location</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="guests" id="guests">
+  <h2><span class="icon">🎀</span> Invited By</h2>
+  <p class="guest-subtitle">
+    We are blessed to celebrate with those closest to our hearts.
+  </p>
+
+  <div class="guest-boxes">
+    <div class="guest-card">
+      <h3><span class="icon">💖</span> Groom’s Family</h3>
+      <ul>
+        <li>Meda Siva Sankar</li>
+        <li>Meda Subhashini</li>
+      </ul>
+    </div>
+    <div class="guest-card">
+      <h3><span class="icon">💖</span> Bride’s Family</h3>
+      <ul>
+        <li>Meda Siva Sankar</li>
+        <li>Meda Subhashini</li>
+      </ul>
+    </div>
+  </div>
+   </section>
+
+    <footer>
+      <p class="footer-main-text">Manoj Weds Supriya</p>
+      <p>Made with❤️</p>
+      <p class="hashtag">#KSFOREVER</p>
+    </footer>
+
+    <script>  
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Music Player Logic ---
+        const music = document.getElementById("bgMusic");
+        const button = document.querySelector(".music-button button");
+
+        function playMusicOnClick() {
+          music.muted = false;
+          music.play().catch(() => {});
+          button.textContent = "🔊";
+          document.removeEventListener("click", playMusicOnClick);
+        }
+
+        document.addEventListener("click", playMusicOnClick);
+
+        button.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (music.muted) {
+            music.muted = false;
+            music.play();
+            button.textContent = "🔊";
+          } else {
+            music.muted = true;
+            button.textContent = "🔇";
+          }
+        });
+
+        // --- Countdown Logic ---
+        const targetDate = new Date("2025-08-18T03:19:00").getTime();
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minsEl = document.getElementById("minutes");
+        const secsEl = document.getElementById("seconds");
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const diff = targetDate - now;
+
+          if (diff <= 0) {
+            daysEl.textContent = "00";
+            hoursEl.textContent = "00";
+            minsEl.textContent = "00";
+            secsEl.textContent = "00";
+            clearInterval(intervalId);
+            return;
+          }
+
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const mins = Math.floor((diff / 1000 / 60) % 60);
+          const secs = Math.floor((diff / 1000) % 60);
+
+          daysEl.textContent = days.toString().padStart(2, '0');
+          hoursEl.textContent = hours.toString().padStart(2, '0');
+          minsEl.textContent = mins.toString().padStart(2, '0');
+          secsEl.textContent = secs.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        const intervalId = setInterval(updateCountdown, 1000);
+
+        // --- Night Mode / Particles Logic ---
+        const body = document.body;
+        const nightModeToggle = document.getElementById("night-mode-toggle");
+
+        // Function to initialize Particles.js based on mode
+        function initializeParticles(isNightMode) {
+          // Destroy existing particles instance if it exists to prevent conflicts
+          if (window.pJSDom && window.pJSDom[0]) {
+            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+            window.pJSDom = []; // Clear the array to ensure a clean re-initialization
+          }
+
+          if (isNightMode) {
+            // NIGHT MODE PARTICLES (SUBTLE NON-TWINKLING STARS - YOUR NEW PREFERENCE)
+                particlesJS("particles-js", {
+                particles: {
+                  number: { value: 250, density: { enable: true, value_area: 800 } }, // Moderate number, spread out
+                  shape: {
+                    type: "circle", // Using the built-in 'circle' shape
+                  },
+                  color: { value: "#87CEEB" }, // SKY BLUE
+                  opacity: {
+                    value: 1, // Subtle opacity for a distant looks
+                    random: true, // NO Random initial opacity for natural variation
+                    anim: {
+                      enable: true, // Disable animation so they don't twinkle
+                      speed: 2,
+                      opacity_min: 0.1, // Minimum opacity during animation (don't disappear completely)
+                      sync: false // Particles animate independently
+                    }
+                  },
+                  size: { value: 5, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } }, // Small, fixed size for star points, no size animation
+                  line_linked: { enable: false }, // No lines connecting particles
+                  move: {
+                    enable: true,
+                    speed: 0.5, // Slightly faster drift
+                    direction: "none", // Drifts randomly
+                    random: true, // Movement is random
+                    straight: false, // Not moving in straight lines
+                    out_mode: "out", // Particles disappear off-screen and reappear
+                    bounce: true,
+                    attract: { enable: false, rotateX: 600, rotateY: 1200 }
+                  }
+                },
+                interactivity: {
+                  detect_on: "canvas",
+                  events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } // No interactivity
+                },
+                retina_detect: true
+              });
+            } else {
+            // NORMAL MODE PARTICLES (HEARTS - AS PER YOUR ORIGINAL CONFIGURATION)
+                particlesJS("particles-js", {
+                  particles: {
+                    number: { value: 20, density: { enable: true, value_area: 800 } },
+                    shape: {
+                      type: "image",
+                      image: {
+                        src: "https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG@master/black/png/32/heart.png",
+                        width: 32,
+                        height: 32
+                      }
+                    },
+                    opacity: { value: 0.8, random: true },
+                    size: { value: 16, random: true },
+                    move: { enable: true, speed: 2, direction: "top", out_mode: "out" }
+                  },
+                  interactivity: {
+                    detect_on: "canvas",
+                    events: { onhover: { enable: false }, onclick: { enable: false }, resize: true }
+                  },
+                  retina_detect: true
+                });
+           }
+        }
+        // Initialize normal mode on page load
+        body.classList.add("normal-mode");
+        // *** CHANGE HERE: Sun icon for normal mode ***
+        nightModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        initializeParticles(false); // Initialize particles for normal mode (hearts)
+
+        nightModeToggle.addEventListener("click", function () {
+          body.classList.toggle("night-mode");
+          body.classList.toggle("normal-mode");
+
+          if (body.classList.contains("night-mode")) {
+            // *** CHANGE HERE: Moon icon for night mode ***
+            nightModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            initializeParticles(true); // Initialize particles for night mode (circles)
+          } else {
+            // *** CHANGE HERE: Sun icon for normal mode ***
+            nightModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            initializeParticles(false); // Initialize particles for normal mode (hearts)
+          }
+        });
+        // Function to scroll to the top
+        function scrollToTop() {
+          window.scrollTo(0, 0); // Scroll to the very top (x=0, y=0)
+        }
+
+        // Check if it's a mobile viewport (you can adjust the max-width as needed)
+        if (window.innerWidth <= 768) {
+          // Add a small delay to ensure all content is rendered before scrolling
+          setTimeout(scrollToTop, 100); // Scroll to top after 100ms
+        }
+
+        // Ensure the #home link in the navbar always works smoothly to top
+        const homeLink = document.querySelector('a[href="#home"]');
+        if (homeLink) {
+          homeLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor jump
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+            // Optionally, update the URL hash without scrolling again
+            history.pushState(null, null, '#home');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
