@@ -759,3 +759,20 @@ button:focus {
   background: #4b6a82;
   box-shadow: 0 0 12px #6b8fa1;
 }
+
+/* Moon over the existing photo in night mode */
+.night-mode .hero::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 8%;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fff6cc;
+  box-shadow:
+    0 0 20px 6px rgba(255, 246, 204, 0.55),
+    0 0 55px 18px rgba(255, 246, 204, 0.25);
+  z-index: 1;
+  pointer-events: none;
+}
