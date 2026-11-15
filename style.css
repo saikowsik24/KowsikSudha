@@ -899,3 +899,67 @@ body.night-mode #particles-js {
   outline: 3px solid #b99051;
   outline-offset: 3px;
 }
+
+
+/* Traditional South Indian Welcome Gate styling */
+.welcome-mangalam {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #9E2A2B; /* Kumkum crimson */
+    letter-spacing: 0.5px;
+    margin-bottom: 0.35rem;
+    text-align: center;
+}
+
+.welcome-shloka {
+    font-size: 0.84rem;
+    line-height: 1.65;
+    color: #8C6212; /* Temple gold */
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.3px;
+}
+
+.welcome-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0.4rem auto 1rem auto;
+    max-width: 180px;
+}
+
+.welcome-divider .motif-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #D4AF37, transparent);
+}
+
+.welcome-divider .motif-icon {
+    color: #D4AF37;
+    font-size: 0.75rem;
+}
+
+/* Double traditional border */
+.welcome-card.traditional-gate {
+    border: 2px solid #D4AF37;
+    outline: 1.5px solid rgba(158, 42, 43, 0.4);
+    outline-offset: -7px;
+    background: #FFFDF8;
+}
+
+@media (max-width: 600px) {
+    .welcome-card.traditional-gate {
+        padding: 1.8rem 1.2rem;
+        outline-offset: -5px;
+    }
+    .welcome-mangalam {
+        font-size: 0.78rem;
+    }
+    .welcome-shloka {
+        font-size: 0.76rem;
+        line-height: 1.6;
+    }
+}
+
