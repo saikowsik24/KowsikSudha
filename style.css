@@ -852,6 +852,10 @@ body.night-mode #particles-js {
   display: none;
 }
 
+/* ==========================================================================
+   ROYAL SOUTH INDIAN WELCOME GATE (ENHANCED)
+   ========================================================================== */
+
 #welcome-gate {
   position: fixed;
   inset: 0;
@@ -860,166 +864,233 @@ body.night-mode #particles-js {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  background: linear-gradient(135deg, #5b1728, #310d1b);
+  padding: clamp(20px, 4vw, 40px);
+  background: radial-gradient(circle at 50% 35%, #5a1525 0%, #350c18 60%, #1a050b 100%);
   text-align: center;
+  backdrop-filter: blur(4px);
 }
 
-.welcome-card {
+/* Royal Invitation Card (Soft rounded corners & gold inlay instead of rigid box) */
+.welcome-card.traditional-gate {
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  max-width: 520px;
-  padding: clamp(40px, 7vw, 72px) clamp(24px, 6vw, 56px);
-  border: 1px solid #b99051;
-  outline: 1px solid rgba(185, 144, 81, .65);
-  outline-offset: -10px;
-  border-radius: 4px;
-  background: #fffaf0;
+  max-width: 580px;
+  margin: auto;
+  padding: clamp(36px, 5.5vw, 56px) clamp(24px, 5vw, 48px);
+  background: linear-gradient(165deg, #FFFDF9 0%, #FBF6EE 100%);
+  border: 2px solid #D4AF37;
+  border-radius: 18px;
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    inset 0 0 0 6px #FFFDF9,
+    inset 0 0 0 7.5px rgba(212, 175, 55, 0.45),
+    0 24px 60px rgba(26, 5, 11, 0.45),
+    0 0 35px rgba(212, 175, 55, 0.15);
   color: #591b2b;
-  box-shadow: 0 24px 70px rgba(28, 5, 13, .35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Remove awkward legacy corner leaf symbols */
 .welcome-card::before,
 .welcome-card::after {
-  position: absolute;
-  color: #b99051;
-  font-size: 1.4rem;
-  content: "❧";
+  display: none !important;
 }
 
-.welcome-card::before {
-  top: 16px;
-  left: 20px;
-}
-
-.welcome-card::after {
-  right: 20px;
-  bottom: 16px;
-  transform: rotate(180deg);
-}
-
-.welcome-eyebrow {
-  margin: 0 0 20px;
-  color: #906b43;
-  font-size: .7rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
-
-.welcome-intro {
-  margin: 0 0 12px;
-  font-size: .95rem;
-  line-height: 1.6;
-}
-
-.welcome-card h1 {
-  margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(2.2rem, 8vw, 3.8rem);
-  line-height: 1.2;
-}
-
-.welcome-heart {
-  color: #ad704b;
-  font-size: .65em;
-}
-
-.welcome-divider {
-  margin: 18px 0;
-  color: #b99051;
-}
-
-.welcome-date {
-  margin: 0 0 28px;
-  color: #704355;
-  font-size: .85rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-#open-invitation {
-  min-height: 48px;
-  padding: 14px 28px;
-  border: 1px solid #631e31;
-  border-radius: 3px;
-  background: #631e31;
-  color: #fffaf0;
-  font: inherit;
-  cursor: pointer;
-  transition: background .2s ease, transform .2s ease;
-}
-
-#open-invitation:hover {
-  background: #842b43;
-  transform: translateY(-2px);
-}
-
-#open-invitation:focus-visible {
-  outline: 3px solid #b99051;
-  outline-offset: 3px;
-}
-
-
-/* Traditional South Indian Welcome Gate styling */
+/* Sacred Inscription */
 .welcome-mangalam {
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: #9E2A2B; /* Kumkum crimson */
-    letter-spacing: 0.5px;
-    margin-bottom: 0.35rem;
-    text-align: center;
+  font-family: 'Playfair Display', serif, 'Noto Sans Telugu';
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  font-weight: 700;
+  color: #9E2A2B;
+  letter-spacing: 1px;
+  margin: 0 0 6px 0;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(158, 42, 43, 0.1);
 }
 
+/* Venkateswara Kalyana Shloka */
 .welcome-shloka {
-    font-size: 0.84rem;
-    line-height: 1.65;
-    color: #8C6212; /* Temple gold */
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 0.6rem;
-    letter-spacing: 0.3px;
+  font-family: 'Playfair Display', Georgia, 'Noto Sans Telugu', serif;
+  font-size: clamp(0.78rem, 2vw, 0.88rem);
+  line-height: 1.7;
+  color: #8C6212;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.3px;
 }
 
+/* Traditional Gold Divider */
 .welcome-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 0.4rem auto 1rem auto;
-    max-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 16px auto;
+  max-width: 220px;
 }
 
 .welcome-divider .motif-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
 }
 
 .welcome-divider .motif-icon {
-    color: #D4AF37;
-    font-size: 0.75rem;
+  color: #D4AF37;
+  font-size: 0.85rem;
+  line-height: 1;
 }
 
-/* Double traditional border */
-.welcome-card.traditional-gate {
-    border: 2px solid #D4AF37;
-    outline: 1.5px solid rgba(158, 42, 43, 0.4);
-    outline-offset: -7px;
-    background: #FFFDF8;
+/* Wedding Invitation Subtitle */
+.welcome-subtitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  color: #8C6212;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  font-weight: 600;
 }
 
+/* Couple Names */
+.welcome-card h1,
+.welcome-title {
+  margin: 0 0 14px 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.3rem, 7vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #631e31;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(99, 30, 49, 0.08);
+}
+
+/* Wedding Date */
+.welcome-date {
+  font-family: 'Playfair Display', Georgia, serif;
+  margin: 0 0 8px 0;
+  color: #704355;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* 🌟 Porumamilla & Vempalli Venue (Separated with clean breathing room) */
+.welcome-venue {
+  font-family: 'Playfair Display', Georgia, serif;
+  margin: 0 0 28px 0; /* Creates generous 28px space above button */
+  color: #8C6212;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.welcome-venue::before,
+.welcome-venue::after {
+  content: "•";
+  color: #D4AF37;
+  font-size: 0.9rem;
+}
+
+/* 🌟 Royal Pill Button (Floating, glowing, not cramped) */
+#open-invitation,
+.welcome-btn.traditional-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  margin-top: 4px;
+  padding: 15px 36px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #FFFDF8;
+  background: linear-gradient(135deg, #7A1D34 0%, #521323 100%);
+  border: 1.5px solid #D4AF37;
+  border-radius: 50px; /* Smooth royal pill shape */
+  box-shadow:
+    0 6px 20px rgba(82, 19, 35, 0.4),
+    0 0 12px rgba(212, 175, 55, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#open-invitation:hover,
+.welcome-btn.traditional-btn:hover {
+  background: linear-gradient(135deg, #8E233E 0%, #63172B 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 28px rgba(82, 19, 35, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.5);
+  border-color: #F1D279;
+}
+
+#open-invitation:focus-visible {
+  outline: 3px solid #D4AF37;
+  outline-offset: 4px;
+}
+
+/* Responsive Mobile Layout */
 @media (max-width: 600px) {
-    .welcome-card.traditional-gate {
-        padding: 1.8rem 1.2rem;
-        outline-offset: -5px;
-    }
-    .welcome-mangalam {
-        font-size: 0.78rem;
-    }
-    .welcome-shloka {
-        font-size: 0.76rem;
-        line-height: 1.6;
-    }
-}
+  #welcome-gate {
+    padding: 16px;
+  }
 
+  .welcome-card.traditional-gate {
+    padding: 28px 18px 32px 18px;
+    border-radius: 14px;
+    box-shadow:
+      0 0 0 1px rgba(212, 175, 55, 0.4),
+      inset 0 0 0 4px #FFFDF9,
+      inset 0 0 0 5.5px rgba(212, 175, 55, 0.4),
+      0 16px 40px rgba(26, 5, 11, 0.4);
+  }
+
+  .welcome-mangalam {
+    font-size: 0.8rem;
+  }
+
+  .welcome-shloka {
+    font-size: 0.74rem;
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+
+  .welcome-title {
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+  }
+
+  .welcome-date {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .welcome-venue {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 22px;
+  }
+
+  #open-invitation,
+  .welcome-btn.traditional-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 13px 20px;
+    font-size: 0.95rem;
+  }
+}
