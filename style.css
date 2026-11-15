@@ -1,10 +1,4 @@
 /* style.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Hero+Light&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/geist@latest/dist/geist.css');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap');
@@ -15,6 +9,12 @@
 /* Make sure you have 'Cormorant Garamond' and 'Open Sans' if they are used elsewhere */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
 body, html {
@@ -795,36 +795,107 @@ body.night-mode #particles-js {
 #welcome-gate {
   position: fixed;
   inset: 0;
+  overflow-y: auto;
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: #f7f3e8;
+  background: linear-gradient(135deg, #5b1728, #310d1b);
   text-align: center;
 }
 
 .welcome-card {
+  position: relative;
+  box-sizing: border-box;
   width: 100%;
   max-width: 520px;
-  padding: 40px 20px;
-  border: 1px solid #a67c32;
-  border-radius: 16px;
-  background: #fffdf8;
-  color: #164b3c;
+  padding: clamp(40px, 7vw, 72px) clamp(24px, 6vw, 56px);
+  border: 1px solid #b99051;
+  outline: 1px solid rgba(185, 144, 81, .65);
+  outline-offset: -10px;
+  border-radius: 4px;
+  background: #fffaf0;
+  color: #591b2b;
+  box-shadow: 0 24px 70px rgba(28, 5, 13, .35);
+}
+
+.welcome-card::before,
+.welcome-card::after {
+  position: absolute;
+  color: #b99051;
+  font-size: 1.4rem;
+  content: "❧";
+}
+
+.welcome-card::before {
+  top: 16px;
+  left: 20px;
+}
+
+.welcome-card::after {
+  right: 20px;
+  bottom: 16px;
+  transform: rotate(180deg);
+}
+
+.welcome-eyebrow {
+  margin: 0 0 20px;
+  color: #906b43;
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.welcome-intro {
+  margin: 0 0 12px;
+  font-size: .95rem;
+  line-height: 1.6;
 }
 
 .welcome-card h1 {
-  margin: 16px 0 28px;
-  font-size: clamp(2.5rem, 9vw, 4.5rem);
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.2rem, 8vw, 3.8rem);
+  line-height: 1.2;
+}
+
+.welcome-heart {
+  color: #ad704b;
+  font-size: .65em;
+}
+
+.welcome-divider {
+  margin: 18px 0;
+  color: #b99051;
+}
+
+.welcome-date {
+  margin: 0 0 28px;
+  color: #704355;
+  font-size: .85rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
 }
 
 #open-invitation {
+  min-height: 48px;
   padding: 14px 28px;
-  border: 0;
-  border-radius: 30px;
-  background: #164b3c;
-  color: white;
-  font-size: 1rem;
+  border: 1px solid #631e31;
+  border-radius: 3px;
+  background: #631e31;
+  color: #fffaf0;
+  font: inherit;
   cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+#open-invitation:hover {
+  background: #842b43;
+  transform: translateY(-2px);
+}
+
+#open-invitation:focus-visible {
+  outline: 3px solid #b99051;
+  outline-offset: 3px;
 }

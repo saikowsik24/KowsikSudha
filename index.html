@@ -12,8 +12,11 @@
   <body>
   <div id="welcome-gate">
       <div class="welcome-card">
-          <p>Our Wedding</p>
-          <h1>Kowsik &amp; Sudha</h1>
+          <p class="welcome-eyebrow">Together with our families</p>
+          <p class="welcome-intro">You are invited to celebrate the wedding of</p>
+          <h1>Kowsik <span class="welcome-heart" aria-label="and">♥</span> Sudha</h1>
+          <div class="welcome-divider" aria-hidden="true">✦</div>
+          <p class="welcome-date">20 December 2026</p>
           <button id="open-invitation" type="button">Open Invitation</button>
       </div>
   </div>
@@ -91,7 +94,7 @@
         </div>
         <div class="event">
           <h4>💍 Wedding Ceremony</h4>
-          <p><span>🗓️</span> Dec 20, 2026 &nbsp; <span>⏰</span> 3:19 AM<br>
+          <p><span>🗓️</span> Dec 20, 2026 &nbsp; <span>⏰</span> 05:20 AM<br>
             📍 Aryavysya Wedding Hall , Porumamilla</p>
         </div>
         <div class="event">
@@ -110,7 +113,7 @@
           <h3>Haldi Ceremony</h3>
           <p><span>📍</span> Vempalli</p>
           <p><span>🗓️</span> December 18, 2026</p>
-          <p><span>⏰</span> 09:00 AM</p>
+          <p><span>⏰</span> 10:00 AM</p>
           <a href="https://www.google.com/maps/place/Medasaniramakotaya+nilayam/@16.4736045,80.6958812,17z/data=!3m1!4b1!4m6!3m5!1s0x3a35fb003629d11d:0xe65bd8c1f3cc0429!8m2!3d16.4735994!4d80.6984561!16s%2Fg%2F11ld53s7ng?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">📍 View Location</a>
         </div>
         <div class="card">
@@ -118,7 +121,7 @@
           <p><span>📍</span> Aryavysya Wedding Hall , Porumamilla</p>
           <p><span>🗓️</span> December 20, 2026</p>
           <p><span>⏰</span> 05:20 AM</p>
-          <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Manoj–Supriya's+Wedding+Ceremony&dates=20250817T214900Z/20250818T001900Z&details=Join+us+to+celebrate+the+wedding+of+Manoj+and+Supriya+at+Rajadhani+Gardens,+Hyderabad.&location=Rajadhani+Gardens,+Hyderabad&sf=true&output=xml" target="_blank">💌 Save to Calendar</a>
+          <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Manoj–Supriya's+Wedding+Ceremony&dates=20261219T235000Z/20261220T022000Z&details=Join+us+to+celebrate+the+wedding+of+Kowsik+and+Sudha+at+Rajadhani+Gardens,+Porumamilla.&location=Rajadhani+Gardens,+Hyderabad&sf=true&output=xml" target="_blank">💌 Save to Calendar</a>
           <a href="https://www.google.com/maps/place/Rajdhani+Garden/@17.3728097,78.5386741,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb98c852f4b543:0x70d91fc944fb9128!8m2!3d17.3728046!4d78.541249!16s%2Fg%2F1tcw__18?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">📍 View Location</a>
         </div>
         <div class="card">
@@ -200,7 +203,7 @@
         });
 
         // --- Countdown Logic ---
-        const targetDate = new Date("2025-08-18T03:19:00").getTime();
+        const targetDate = new Date("2026-12-20T05:20:00+05:30").getTime()
         const daysEl = document.getElementById("days");
         const hoursEl = document.getElementById("hours");
         const minsEl = document.getElementById("minutes");
