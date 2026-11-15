@@ -268,42 +268,78 @@ h3 {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* ==========================================================================
+   FLOATING MUSIC TOGGLE BUTTON
+   ========================================================================== */
 .music-button {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 1000;
+  z-index: 1100; /* Floats above navbar (1000), but below welcome-gate (2000) */
 }
 
 .music-button button {
-  background: linear-gradient(135deg, #ff4081, #ff80ab);
-  border: none;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  color: white;
-  font-size: 24px;
-  padding: 12px 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #D4AF37; /* Traditional temple gold border */
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   cursor: pointer;
-  animation: pulse 2s infinite;
-  transition: transform 0.3s;
+  box-shadow: 0 4px 16px rgba(194, 24, 91, 0.35), 0 0 0 2px rgba(212, 175, 55, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .music-button button:hover {
-  transform: scale(1.1);
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 20px rgba(194, 24, 91, 0.45), 0 0 10px rgba(212, 175, 55, 0.6);
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+.music-button button:focus-visible {
+  outline: 3px solid #D4AF37;
+  outline-offset: 3px;
 }
 
+/* Pulsing aura only when actively playing */
 .music-button button.playing {
-  background: #ff4081; /* Brighter pink */
-  color: white;
-  box-shadow: 0 0 12px #ff80ab;
-  transform: scale(1.1);
-  opacity: 1; /* Remove dimming */
+  background: linear-gradient(135deg, #e91e63, #ff4081);
+  animation: musicPulse 2s infinite ease-in-out;
+}
+
+@keyframes musicPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7), 0 4px 15px rgba(194, 24, 91, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0), 0 6px 20px rgba(194, 24, 91, 0.5);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), 0 4px 15px rgba(194, 24, 91, 0.4);
+    transform: scale(1);
+  }
+}
+
+/* Mobile responsive sizing */
+@media (max-width: 600px) {
+  .music-button {
+    right: 16px;
+    bottom: 16px;
+  }
+  .music-button button {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
 }
 
 section {
@@ -752,12 +788,36 @@ button:focus {
 
 /* Music Button in Night Mode */
 .night-mode .music-button button {
-  background: linear-gradient(135deg, #4b6a82, #6b8fa1); /* Darker gradient for button */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #1f2a3a, #3b506b);
+  border-color: #D4AF37;
+  color: #add8e6;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(212, 175, 55, 0.3);
 }
+
+.night-mode .music-button button:hover {
+  background: linear-gradient(135deg, #2c3e50, #4b6a82);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
 .night-mode .music-button button.playing {
-  background: #4b6a82;
-  box-shadow: 0 0 12px #6b8fa1;
+  background: linear-gradient(135deg, #2c3e50, #4b6a82);
+  color: #ffffff;
+  animation: musicPulseNight 2s infinite ease-in-out;
+}
+
+@keyframes musicPulseNight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.6), 0 4px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(173, 216, 230, 0), 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(173, 216, 230, 0), 0 4px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
 }
 
 /* Moon over the existing photo in night mode */
@@ -792,6 +852,10 @@ body.night-mode #particles-js {
   display: none;
 }
 
+/* ==========================================================================
+   ROYAL SOUTH INDIAN WELCOME GATE (ENHANCED)
+   ========================================================================== */
+
 #welcome-gate {
   position: fixed;
   inset: 0;
@@ -800,102 +864,233 @@ body.night-mode #particles-js {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  background: linear-gradient(135deg, #5b1728, #310d1b);
+  padding: clamp(20px, 4vw, 40px);
+  background: radial-gradient(circle at 50% 35%, #5a1525 0%, #350c18 60%, #1a050b 100%);
   text-align: center;
+  backdrop-filter: blur(4px);
 }
 
-.welcome-card {
+/* Royal Invitation Card (Soft rounded corners & gold inlay instead of rigid box) */
+.welcome-card.traditional-gate {
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  max-width: 520px;
-  padding: clamp(40px, 7vw, 72px) clamp(24px, 6vw, 56px);
-  border: 1px solid #b99051;
-  outline: 1px solid rgba(185, 144, 81, .65);
-  outline-offset: -10px;
-  border-radius: 4px;
-  background: #fffaf0;
+  max-width: 580px;
+  margin: auto;
+  padding: clamp(36px, 5.5vw, 56px) clamp(24px, 5vw, 48px);
+  background: linear-gradient(165deg, #FFFDF9 0%, #FBF6EE 100%);
+  border: 2px solid #D4AF37;
+  border-radius: 18px;
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    inset 0 0 0 6px #FFFDF9,
+    inset 0 0 0 7.5px rgba(212, 175, 55, 0.45),
+    0 24px 60px rgba(26, 5, 11, 0.45),
+    0 0 35px rgba(212, 175, 55, 0.15);
   color: #591b2b;
-  box-shadow: 0 24px 70px rgba(28, 5, 13, .35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Remove awkward legacy corner leaf symbols */
 .welcome-card::before,
 .welcome-card::after {
-  position: absolute;
-  color: #b99051;
-  font-size: 1.4rem;
-  content: "❧";
+  display: none !important;
 }
 
-.welcome-card::before {
-  top: 16px;
-  left: 20px;
+/* Sacred Inscription */
+.welcome-mangalam {
+  font-family: 'Playfair Display', serif, 'Noto Sans Telugu';
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  font-weight: 700;
+  color: #9E2A2B;
+  letter-spacing: 1px;
+  margin: 0 0 6px 0;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(158, 42, 43, 0.1);
 }
 
-.welcome-card::after {
-  right: 20px;
-  bottom: 16px;
-  transform: rotate(180deg);
+/* Venkateswara Kalyana Shloka */
+.welcome-shloka {
+  font-family: 'Playfair Display', Georgia, 'Noto Sans Telugu', serif;
+  font-size: clamp(0.78rem, 2vw, 0.88rem);
+  line-height: 1.7;
+  color: #8C6212;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.3px;
 }
 
-.welcome-eyebrow {
-  margin: 0 0 20px;
-  color: #906b43;
-  font-size: .7rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
-
-.welcome-intro {
-  margin: 0 0 12px;
-  font-size: .95rem;
-  line-height: 1.6;
-}
-
-.welcome-card h1 {
-  margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(2.2rem, 8vw, 3.8rem);
-  line-height: 1.2;
-}
-
-.welcome-heart {
-  color: #ad704b;
-  font-size: .65em;
-}
-
+/* Traditional Gold Divider */
 .welcome-divider {
-  margin: 18px 0;
-  color: #b99051;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 16px auto;
+  max-width: 220px;
 }
 
+.welcome-divider .motif-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+.welcome-divider .motif-icon {
+  color: #D4AF37;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* Wedding Invitation Subtitle */
+.welcome-subtitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  color: #8C6212;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+/* Couple Names */
+.welcome-card h1,
+.welcome-title {
+  margin: 0 0 14px 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.3rem, 7vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #631e31;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(99, 30, 49, 0.08);
+}
+
+/* Wedding Date */
 .welcome-date {
-  margin: 0 0 28px;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin: 0 0 8px 0;
   color: #704355;
-  font-size: .85rem;
-  letter-spacing: .14em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-#open-invitation {
-  min-height: 48px;
-  padding: 14px 28px;
-  border: 1px solid #631e31;
-  border-radius: 3px;
-  background: #631e31;
-  color: #fffaf0;
-  font: inherit;
-  cursor: pointer;
-  transition: background .2s ease, transform .2s ease;
+/* 🌟 Porumamilla & Vempalli Venue (Separated with clean breathing room) */
+.welcome-venue {
+  font-family: 'Playfair Display', Georgia, serif;
+  margin: 0 0 28px 0; /* Creates generous 28px space above button */
+  color: #8C6212;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-#open-invitation:hover {
-  background: #842b43;
+.welcome-venue::before,
+.welcome-venue::after {
+  content: "•";
+  color: #D4AF37;
+  font-size: 0.9rem;
+}
+
+/* 🌟 Royal Pill Button (Floating, glowing, not cramped) */
+#open-invitation,
+.welcome-btn.traditional-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  margin-top: 4px;
+  padding: 15px 36px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #FFFDF8;
+  background: linear-gradient(135deg, #7A1D34 0%, #521323 100%);
+  border: 1.5px solid #D4AF37;
+  border-radius: 50px; /* Smooth royal pill shape */
+  box-shadow:
+    0 6px 20px rgba(82, 19, 35, 0.4),
+    0 0 12px rgba(212, 175, 55, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#open-invitation:hover,
+.welcome-btn.traditional-btn:hover {
+  background: linear-gradient(135deg, #8E233E 0%, #63172B 100%);
   transform: translateY(-2px);
+  box-shadow:
+    0 10px 28px rgba(82, 19, 35, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.5);
+  border-color: #F1D279;
 }
 
 #open-invitation:focus-visible {
-  outline: 3px solid #b99051;
-  outline-offset: 3px;
+  outline: 3px solid #D4AF37;
+  outline-offset: 4px;
+}
+
+/* Responsive Mobile Layout */
+@media (max-width: 600px) {
+  #welcome-gate {
+    padding: 16px;
+  }
+
+  .welcome-card.traditional-gate {
+    padding: 28px 18px 32px 18px;
+    border-radius: 14px;
+    box-shadow:
+      0 0 0 1px rgba(212, 175, 55, 0.4),
+      inset 0 0 0 4px #FFFDF9,
+      inset 0 0 0 5.5px rgba(212, 175, 55, 0.4),
+      0 16px 40px rgba(26, 5, 11, 0.4);
+  }
+
+  .welcome-mangalam {
+    font-size: 0.8rem;
+  }
+
+  .welcome-shloka {
+    font-size: 0.74rem;
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+
+  .welcome-title {
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+  }
+
+  .welcome-date {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .welcome-venue {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 22px;
+  }
+
+  #open-invitation,
+  .welcome-btn.traditional-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 13px 20px;
+    font-size: 0.95rem;
+  }
 }
