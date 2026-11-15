@@ -268,42 +268,78 @@ h3 {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* ==========================================================================
+   FLOATING MUSIC TOGGLE BUTTON
+   ========================================================================== */
 .music-button {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 1000;
+  z-index: 1100; /* Floats above navbar (1000), but below welcome-gate (2000) */
 }
 
 .music-button button {
-  background: linear-gradient(135deg, #ff4081, #ff80ab);
-  border: none;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  color: white;
-  font-size: 24px;
-  padding: 12px 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #D4AF37; /* Traditional temple gold border */
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   cursor: pointer;
-  animation: pulse 2s infinite;
-  transition: transform 0.3s;
+  box-shadow: 0 4px 16px rgba(194, 24, 91, 0.35), 0 0 0 2px rgba(212, 175, 55, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .music-button button:hover {
-  transform: scale(1.1);
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 20px rgba(194, 24, 91, 0.45), 0 0 10px rgba(212, 175, 55, 0.6);
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+.music-button button:focus-visible {
+  outline: 3px solid #D4AF37;
+  outline-offset: 3px;
 }
 
+/* Pulsing aura only when actively playing */
 .music-button button.playing {
-  background: #ff4081; /* Brighter pink */
-  color: white;
-  box-shadow: 0 0 12px #ff80ab;
-  transform: scale(1.1);
-  opacity: 1; /* Remove dimming */
+  background: linear-gradient(135deg, #e91e63, #ff4081);
+  animation: musicPulse 2s infinite ease-in-out;
+}
+
+@keyframes musicPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7), 0 4px 15px rgba(194, 24, 91, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0), 0 6px 20px rgba(194, 24, 91, 0.5);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), 0 4px 15px rgba(194, 24, 91, 0.4);
+    transform: scale(1);
+  }
+}
+
+/* Mobile responsive sizing */
+@media (max-width: 600px) {
+  .music-button {
+    right: 16px;
+    bottom: 16px;
+  }
+  .music-button button {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
 }
 
 section {
@@ -752,12 +788,36 @@ button:focus {
 
 /* Music Button in Night Mode */
 .night-mode .music-button button {
-  background: linear-gradient(135deg, #4b6a82, #6b8fa1); /* Darker gradient for button */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #1f2a3a, #3b506b);
+  border-color: #D4AF37;
+  color: #add8e6;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(212, 175, 55, 0.3);
 }
+
+.night-mode .music-button button:hover {
+  background: linear-gradient(135deg, #2c3e50, #4b6a82);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
 .night-mode .music-button button.playing {
-  background: #4b6a82;
-  box-shadow: 0 0 12px #6b8fa1;
+  background: linear-gradient(135deg, #2c3e50, #4b6a82);
+  color: #ffffff;
+  animation: musicPulseNight 2s infinite ease-in-out;
+}
+
+@keyframes musicPulseNight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.6), 0 4px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(173, 216, 230, 0), 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(173, 216, 230, 0), 0 4px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
 }
 
 /* Moon over the existing photo in night mode */
