@@ -210,8 +210,8 @@
           secsEl.textContent = secs.toString().padStart(2, '0');
         }
 
-        updateCountdown();
         const intervalId = setInterval(updateCountdown, 1000);
+        updateCountdown();
 
         // --- Night Mode / Particles Logic ---
         const body = document.body;
