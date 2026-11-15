@@ -3,14 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Groom Wedding Invite</title>
+      <title>Our Wedding — Kowsik &amp; Sudha</title>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <div id="particles-js"></div>
+  <div id="welcome-gate">
+      <div class="welcome-card">
+          <p>Our Wedding</p>
+          <h1>Kowsik &amp; Sudha</h1>
+          <button id="open-invitation" type="button">Open Invitation</button>
+      </div>
+  </div>
+
+  <div id="wedding-site">
+      <div id="particles-js"></div>
     <nav class="navbar">
       <div class="nav-logo">
         <span class="initials">K</span>
@@ -147,13 +156,24 @@
    </section>
 
     <footer>
-      <p class="footer-main-text">Manoj Weds Supriya</p>
+      <p class="footer-main-text">Kowsik Weds Sudha</p>
       <p>Made with❤️</p>
       <p class="hashtag">#KSFOREVER</p>
     </footer>
+  </div>
 
     <script>  
       document.addEventListener("DOMContentLoaded", function () {
+
+      const openButton = document.getElementById("open-invitation");
+
+        openButton.addEventListener("click", function (event) {
+          event.stopPropagation();
+          document.getElementById("wedding-site").style.display = "block";
+          initializeParticles(document.body.classList.contains("night-mode"));
+          document.getElementById("welcome-gate").style.display = "none";
+          window.scrollTo(0, 0);
+        });
         // --- Music Player Logic ---
         const music = document.getElementById("bgMusic");
         const button = document.querySelector(".music-button button");
@@ -229,11 +249,11 @@
             // NIGHT MODE PARTICLES (SUBTLE NON-TWINKLING STARS - YOUR NEW PREFERENCE)
                 particlesJS("particles-js", {
                 particles: {
-                  number: { value: 250, density: { enable: true, value_area: 800 } }, // Moderate number, spread out
+                  number: { value: 90, density: { enable: true, value_area: 800 } }, // Moderate number, spread out
                   shape: {
                     type: "circle", // Using the built-in 'circle' shape
                   },
-                  color: { value: "#87CEEB" }, // SKY BLUE
+                  color: { value: "#fff4ce" }, // SKY BLUE
                   opacity: {
                     value: 1, // Subtle opacity for a distant looks
                     random: true, // NO Random initial opacity for natural variation
@@ -244,16 +264,16 @@
                       sync: false // Particles animate independently
                     }
                   },
-                  size: { value: 5, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } }, // Small, fixed size for star points, no size animation
+                  size: { value: 2.5, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } }, // Small, fixed size for star points, no size animation
                   line_linked: { enable: false }, // No lines connecting particles
                   move: {
                     enable: true,
-                    speed: 0.5, // Slightly faster drift
-                    direction: "none", // Drifts randomly
-                    random: true, // Movement is random
-                    straight: false, // Not moving in straight lines
-                    out_mode: "out", // Particles disappear off-screen and reappear
-                    bounce: true,
+                    speed: 2,
+                    direction: "bottom",
+                    random: false,
+                    straight: true,
+                    out_mode: "out",
+                    bounce: false,
                     attract: { enable: false, rotateX: 600, rotateY: 1200 }
                   }
                 },
@@ -292,7 +312,6 @@
         body.classList.add("normal-mode");
         // *** CHANGE HERE: Sun icon for normal mode ***
         nightModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        initializeParticles(false); // Initialize particles for normal mode (hearts)
 
         nightModeToggle.addEventListener("click", function () {
           body.classList.toggle("night-mode");
